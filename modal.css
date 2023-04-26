@@ -1,0 +1,268 @@
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 10;
+    transition: 200ms ease-in-out;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+    transition: 200ms ease-in-out;
+  }
+  
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+.modal__content-container {
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 4s;
+}
+
+.modal__content-container.active {
+    transform: perspective(2500px) rotate(5deg);
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .15), 0 10px 100px rgba(0, 0, 0, 0.3);
+}
+
+.modal__content-outside.active {
+    transform: rotateY(-160deg);
+} 
+
+.front-text {
+    font-family: 'Rubik Wet Paint', cursive;
+    font-size: 1.8vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tree-leaf {
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    width: 7vw;
+}
+
+.inner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 1.5vw;
+}
+
+.inner-content-iten {
+    width: 20vw;
+    height: 26vw;
+    border-radius: 10px;
+    background-color: #ccc;
+    background: url('./images/bdcard.jpg') center / cover no-repeat;
+}
+
+.modal__content-outside {
+    position: relative;
+    background: #B993D6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #8CA6DB, #B993D6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    transform-origin: left;
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1);
+    transition: .4s;
+    border-radius: 10px;
+    
+    min-width: 33vw;
+    min-height: 42vw;
+    padding: 2vw;
+    /* overflow: hidden; */
+    z-index: 2;
+}
+
+.modal__content-inside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2vw;
+    background: #B993D6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #8CA6DB, #B993D6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 10px;
+    box-shadow: inset 10px 0 15px 0 rgba(0, 0, 0, 0.1);
+    min-width: 33vw;
+    min-height: 42vw;
+    z-index: 1;
+}
+
+.modal__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.baloon-header {
+    width: 7vw;
+}
+
+/* Đóng Modal */
+#close-btn {
+    position: absolute;
+    top: 2vw;
+    background-color: transparent;
+    border: none;
+}
+
+#close-btn > img {
+    width: 1.5vw;
+}
+
+#close-btn:hover {
+    transform: scale(1.2);
+    transition: all 0.5s linear;
+}
+
+/* Footer */
+
+/* Gập Card */
+#closeCard {
+    background-color: transparent;
+    border: none;
+    font-size: 1.8rem;
+    animation: btn-scale 1.5s infinite;
+
+    position: absolute;
+    bottom: 2vw;
+}
+
+#closeCard > img {
+    width: 2.5vw;
+}
+
+#pika {
+    width: 10vw;
+    height: 10vw;
+
+    position: absolute;
+    bottom: 2vw;
+    right: 2.2vw;
+}
+
+#btn-openCard {
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    position: absolute;
+    right: 1vw;
+    bottom: 1vw;
+    animation: btn-scale 1.5s infinite;
+}
+
+#btn-openCard:hover {
+    color: crimson;
+    transition: all 1s ease;
+}
+
+#btn-openCard > img {
+    width: 2vw;
+}
+
+@keyframes btn-scale {
+    0% {transform: scale(1);}
+    25% {transform: scale(1.2);}
+    50% {transform: scale(0.8);}
+    75% {transform: scale(1.2);}
+    100% {transform: scale(1);}
+  }
+
+.modal_body {
+    margin-top: 2vw;
+}
+
+.modal_body-item {
+    list-style: none;
+    opacity: 0;
+    font-family: 'Roboto', sans-serif;
+    padding: 0.5vw;
+    font-size: 1.5vw;
+    border-bottom: 1px solid #ccc;
+    background-size: 2vw;
+}
+
+#avatar {
+    border-radius: 50%;
+    border: 1px solid #333;
+    object-fit: cover;
+    width: 8vw;
+    height: 8vw;
+}
+
+.button-cock {
+    position: absolute;
+    top: 73%;
+    left: 50%;
+    transform: translateX(-50%, -50%);
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    animation: tilt-shaking 0.25s infinite;
+    visibility: hidden;
+}
+
+#cock {
+    width: 3.5vw;
+    height: 3.5vw;
+    border-radius: 50%;
+}
+
+.button-cock::before {
+    position: absolute;
+    content: 'Click Me !';
+    width: 3vw;
+    height: 2vw;
+    padding: 0.2vw;
+    top: -2vw;
+    right: -3vw;
+    background-color: #fff;
+    border-radius: 10px;
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-cock::after {
+    position: absolute;
+    content: '';
+    width: 1vw;
+    height: 1vw;
+    top: -0.3vw;
+    right: -1vw;
+    background-color: #fff;
+    border-bottom-right-radius: 1vw 1vw;
+    z-index: 0;
+}
+
+@keyframes tilt-shaking {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+  }

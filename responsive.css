@@ -1,0 +1,85 @@
+@media only screen and (orientation:portrait){
+    #container { display:none; }
+    #rotate { display:flex; }
+}
+@media only screen and (orientation:landscape){
+    #rotate { display:none; }
+}
+
+/* Small Phone */
+@media only screen and (max-width: 700px) {
+    .cake-svg {
+        right: 10%;
+        top: 15%;
+    }
+
+    .cake-svg svg {
+        width: 150px;
+    }
+
+    .candles {
+        top: 45%;
+        left: 38%;
+    }
+
+    .text_name.active {
+        bottom: calc(50vh - 0.9 * (10vw + 5vw));
+    }
+
+    #close-btn, #btn-openCard, #closeCard {
+        font-size: 1rem;
+    }
+
+    .button-cock {
+        top: 77%;
+    }
+
+    .button-cock::before {
+        width: 4vw;
+        height: 3vw;
+        top: -3vw;
+        right: -4vw;
+        font-size: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .speech {
+        width: 75vw;
+        height: 22vh;
+    }
+}
+
+/* Normal Phone */
+@media only screen and (min-width: 700px) and (max-width: 992px) {
+    .cake-svg {
+        right: 12%;
+        top: 14%;
+    }
+
+    .cake-svg svg {
+        width: 180px;
+    }
+
+    .candles {
+        top: 50%;
+        left: 38%;
+    }
+
+    #close-btn, #btn-openCard, #closeCard {
+        font-size: 1rem;
+    }
+
+    .button-cock::before {
+        width: 4.2vw;
+        height: 3.4vw;
+        top: -3.3vw;
+        right: -4vw;
+        font-size: 0.7rem;
+    }
+}
+
+/* PC, Laptop */
+@media only screen and (min-width: 992px) {
+    
+}
